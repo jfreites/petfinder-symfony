@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>"> {% block stylesheets %}{% endblock %}
 
-        {% block javascripts %}
-{% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body class="bg-gray-100 h-screen antialiased leading-none font-sans">
+		<header>
+			<nav class="flex items-center justify-between flex-wrap w-full p-6 fixed z-10 top-0 shadow-lg bg-gray-600">
+				<div class="flex items-center flex-shrink-0 text-white mr-6">
+					<a class="text-2xl no-underline hover:text-gray-400 font-extrabold" href="/">🐱 PETFINDER</a>
+				</div>
+
+				<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto block shadow-3xl">
+					<ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
+						<li class="mr-3">
+							<a class="inline-block uppercase text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">
+								¿Como funciona?
+							</a>
+						</li>
+						<li class="mr-3">
+							<a class="inline-block uppercase text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Adopta</a>
+						</li>
+						<li class="mr-3">
+							<a class="inline-block uppercase text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Contacto</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		{% block body %}{% endblock %}
+
+		{% block footer %}
+			<footer class="bg-gray-600 py-6 mt-20">
+				<p class="w-25 w-4/5 text-center pb-3 m-auto text-base text-gray-100 pt-6">
+					Copyright 2024 - PetFinder. All Rights Reserved.
+				</p>
+			</footer>
+		{% endblock %}
+	</body>
 </html>
