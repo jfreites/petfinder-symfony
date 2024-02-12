@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -25,5 +24,7 @@
 ###< symfony/asset-mapper ###
 
 ###> ddev config ###
+/node_modules
 /.ddev/
+/public/uploads/
 ###< ddev config ###
